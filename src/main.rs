@@ -3,6 +3,7 @@ use std::thread::sleep;
 use std::time::Duration;
 
 fn main() {
+    clear_terminal();
     let mut a = 0.0_f64;
     let mut b_angle = 0.0_f64;
 
@@ -53,4 +54,7 @@ fn main() {
         sleep(Duration::from_millis(30));
     }
 }
-
+fn clear_terminal() {
+    print!("\x1B[2J\x1B[H");
+    std::io::stdout().flush().unwrap();
+}
